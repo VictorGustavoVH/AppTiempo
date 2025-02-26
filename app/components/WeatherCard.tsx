@@ -12,17 +12,17 @@ interface PropsClima {
 
 const TarjetaClima = ({ fecha, dia, tempMin, tempMax, probabilidadLluvia, descripcion }: PropsClima) => {
   const obtenerColorFondo = () => {
-    if (tempMax < 20) return "#ADD8E6"; // Azul
-    if (tempMax >= 21 && tempMax <= 30) return "#FFD700"; // Amarillo
-    return "#FF8C00"; // Naranja
+    if (tempMax < 20) return "#ADD8E6"; 
+    if (tempMax >= 21 && tempMax <= 30) return "#FFD700"; 
+    return "#FF8C00"; 
   };
 
   return (
     <View style={[estilos.tarjeta, { backgroundColor: obtenerColorFondo() }]}>
       <Text style={estilos.fecha}>{dia}, {fecha}</Text>
-      <Text>🌡️ Máx: {tempMax}°C / Mín: {tempMin}°C</Text>
-      <Text>🌧️ Prob. de lluvia: {probabilidadLluvia}%</Text>
-      <Text>🌤️ Estado: {descripcion}</Text>
+      <Text>Máx: {tempMax}°C / Mín: {tempMin}°C</Text>
+      <Text>Prob. de lluvia: {probabilidadLluvia}%</Text>
+      <Text>Estado: {descripcion}</Text>
     </View>
   );
 };
