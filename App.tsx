@@ -1,11 +1,22 @@
 import React from "react";
-import { SafeAreaView } from "react-native";
-import FrmClima from "./app/screens/frmClima";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import IoTControlScreen from "./app/screens/IoTControlScreen"; // Asegúrate de que la ruta es correcta
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <FrmClima />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="IoTControl" 
+          component={IoTControlScreen} 
+          options={{ headerShown: false }} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;
